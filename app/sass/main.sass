@@ -1,0 +1,550 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #191919
+
+*
+	box-sizing: border-box
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.37
+	font-family: $font-regular
+	overflow-x: hidden
+	color: $text-color
+	input, textarea
+		outline: none
+		&:focus:required:invalid
+			//border-color: red
+		&:required:valid
+			//border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.main-header
+	background-color: #fff
+	box-shadow: 0 1px 15px rgba(0,0,0,.15)
+	position: relative
+	z-index: 2
+
+.main-header_inner	
+	padding: 10px 20px
+	max-width: 1290px
+	margin: 0 auto
+	display: flex
+	justify-content: space-between
+	-ms-align-items: center
+	align-items: center
+
+.logo
+	max-width: 125px
+	img
+		display: inline-block
+		max-width: 100%
+		height:  auto
+
+.main-nav
+	a
+		display: inline-block
+		color: #303030
+		margin-right: 45px
+		&:hover
+			opacity: 0.75
+			text-decoration: none
+
+.sign-button
+	display: inline-block
+	border: 2px solid #f2c90b
+	border-radius: 100px
+	color: #191919
+	font-size: 16px
+	line-height: 17px
+	padding: 9px 18px 10px
+	text-decoration: none
+	text-align: center
+	&:hover
+		background-color: #f2c90b
+		color: #fff
+		text-decoration: none
+
+.main-footer
+	.sign-button
+		color: #fff
+		&:hover
+			color: #000
+
+.header-info_phone
+	margin-bottom: 2px
+	padding-left: 10px
+	i
+		color: #ccc
+		margin-right: 5px
+	a
+		display: inline-block
+		color: #303030
+		font-family: $font-bold
+		&:hover
+			text-decoration: none
+			opacity: 0.8
+	
+.header-info_text
+	display: block
+	color: #ccc
+	font-size: 12px
+	font-family: $font-regular
+	
+.intro
+	background-color: #f2c90b
+	min-height: 640px
+
+.intro-content
+	padding-top: 100px
+
+.intro-bg
+	background-image: url('../img/intro-bg-desktop.png')
+	background-repeat: no-repeat
+	background-position: 100% 30px
+	background-size: contain
+
+h1
+	color: #191919
+	font-family: $font-regular
+	font-size: 40px
+	margin-bottom: 15px
+	
+h2
+	color: #191919
+	font-family: $font-regular
+	font-size: 22px
+	margin-bottom: 50px
+
+h3
+	color: $text-color
+	font-size: 30px
+	font-family: $font-regular
+
+.intro-advantages
+	margin-bottom: 50px
+
+.intro-advantages_item
+	img
+		display: inline-block
+		margin-bottom: 15px
+	p
+		font-family: $font-regular
+		color: #191919
+		font-size: 16px
+
+.intro-subhead
+	display: block
+	font-size: 22px
+	font-family: $font-regular
+	max-width: 350px
+	margin-bottom: 25px
+	
+.text-blue
+	color: $blue
+
+.intro-form
+	display: flex
+	margin-bottom: 50px
+
+.intro-form_field,
+.intro-form_field-left,
+.intro-form_field-right
+	background-color: #fff
+	width: 37%
+	input
+		display: block
+		width: 100%
+		font-family: $font-regular
+		border: none
+		outline: none
+		appearance: none
+		padding: 8px 12px 9px
+		margin: 6px 0
+
+.intro-form_field-left
+	border-radius: 5px 0 0 5px
+	input
+		border-right: 2px solid #d7d7d7
+
+.intro-form_field
+	border-radius: $radius
+	
+
+.intro-form_btn
+	background-color: #191919
+	color: #fff
+	text-transform: uppercase
+	border-radius: 0 5px 5px 0
+	padding: 10px 25px
+	border: none
+	outline: none
+	cursor: pointer
+	font-family: $font-bold
+	&:hover
+		opacity: 0.8
+		color: #f2c90b
+	&:active
+		opacity: 1
+
+.about
+	padding: 120px 0 60px
+	background-color: #f8f8f8
+
+.about-item
+	margin-bottom: 60px
+	img
+		display: inline-block
+		margin-bottom: 20px
+	strong
+		display: block
+		font-family: $font-bold
+		font-size: 18px
+		max-width: 200px
+		margin: 0 auto 10px
+	p
+		display: block
+		font-family: $font-regular
+		font-size: 16px
+
+.section-heading
+	margin-bottom: 50px
+
+.text-red
+	color: $red
+
+.conditions
+	padding-top: 60px
+
+.conditions-item
+	background-color: #fff
+	border-radius: 10px
+	padding: 20px 22px 27px 22px
+	box-shadow: 0 5px 40px -5px rgba(0,0,0,.15)
+	min-height: 100%
+	position: relative
+	&_wrap
+		margin-bottom: 50px
+	&_discount
+		position: absolute
+		right: 0
+		top: 55px
+		display: inline-block
+		color: rgba(0,0,0,.5)
+		font-family: $font-bold
+		background-color: $yellow
+		border-radius: 5px 0 0 5px
+		text-transform: uppercase
+		padding: 14px 10px 15px 18px
+		border: none
+		outline: none
+		appearance: none
+		margin: 0 auto
+	p,
+	ul
+		font-family: $font-regular
+		font-size: 14px
+		margin-bottom: 30px
+	ul
+		padding: 0
+		list-style: none
+		
+.conditions-item_img
+	margin-bottom: 30px
+	img
+		display: inline-block
+		max-width: 100%
+		height: auto
+
+.conditions-item_title
+	display: block
+	color: $text-color
+	font-family: $font-bold
+	font-size: 18px
+	margin-bottom: 20px
+	
+.btn-custom
+	display: inline-block
+	color: rgba(0,0,0,.5)
+	font-family: $font-bold
+	background-color: $yellow
+	border-radius: 5px
+	text-transform: uppercase
+	padding: 14px 23px 15px
+	border: none
+	outline: none
+	appearance: none
+	margin: 0 auto
+	text-align: center
+	&:hover
+		color: rgba(0,0,0,1)
+		text-decoration: none
+	&.btn-justify
+		width: 100%
+	
+.help
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		background-color: #f8f8f8
+		left: 0
+		top: 0
+		width: 50%
+		height: 100%
+		z-index: -1
+	
+.help-content
+	background-color: #f8f8f8
+	padding-top: 70px
+	min-height: 500px
+
+.help-content_item
+	margin-right: 25px
+	img
+		margin-bottom: 15px
+
+.help-content_item-wrap
+	display: flex
+	justify-content: space-between
+	margin-bottom: 60px
+
+.help-content
+	h3
+		margin-bottom: 60px
+
+.help-bg
+	background-image: url('../img/help-bg.jpg')
+	background-repeat: no-repeat
+	background-position: 100% 50%
+	background-size: contain
+
+.calculator
+	padding-top: 60px
+
+.calculator-left
+	h3
+		margin-bottom: 50px
+		span
+			display: block
+	p
+		margin-bottom: 50px
+	&_item
+		img
+			margin-bottom: 10px
+
+.calculator-right
+	h3
+		margin-bottom: 40px
+
+.calculator-right_subheading
+	margin-bottom: 25px
+
+.calculator-right_footer
+	margin-bottom: 50px
+	span
+		display: block
+		font-size: 24px
+	strong
+		font-family: $font-bold
+	p
+		display: block
+		color: $text-color
+		opacity: 0.7
+		margin-bottom: 40px
+
+.driver
+	background-color: #2f71e5
+	
+.driver-inner
+	padding: 85px 0 80px
+	h3
+		margin-bottom: 100px
+		color: #fff
+
+.driver-bg
+	background-image: url('../img/driver-bg.png')
+	background-repeat: no-repeat
+	background-position: 50% 30px
+	background-size: contain
+
+.driver-item
+	margin-bottom: 70px
+	img
+		display: inline-block
+		max-width: 100%
+		height: auto
+		margin-bottom: 10px
+		vertical-align: middle
+	p
+		display: block
+		color: #fff
+		font-family: $font-regular
+		font-size: 18px
+		line-height: 22px
+	&_img
+		min-height: 65px
+
+.driver-descr
+	p
+		display: block
+		color: #fff
+		font-size: 18px
+		line-height: 26px
+		margin-bottom: 50px
+
+.testimonials
+	padding: 110px 0 25px
+	h3
+		margin-bottom: 
+	
+.telegram-link
+	display: block
+	color: #197dbc
+	font-size: 12px
+	text-decoration: none
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	&:hover
+		text-decoration: none
+	span
+		display: inline-block
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+	&:before
+		content: ''
+		display: inline-block
+		width: 18px
+		height: 18px
+		margin-left: -18px
+		margin-right: 7px
+		background-image: url('../img/ico-telegram.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: 0 0
+
+.testimonials-item
+	margin-bottom: 70px
+	img
+		display: inline-block
+		max-width: 100%
+		height: auto
+	strong
+		margin-top: -10px
+		display: block
+		font-size: 17px
+		line-height: 21px
+		font-family: $font-bold
+		margin-bottom: 10px
+		color: $text-color
+	p
+		display: block
+		margin-bottom: 12px
+		font-size: 11px
+		color: $text-color
+		opacity: 0.7
+
+.main-footer
+	background-color: #000
+
+.footer-inner
+	padding: 35px 0 20px
+	min-height: 350px
+
+.footer-info
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.footer-logo
+	display: block
+	max-width: 125px
+	img
+		display: inline-block
+		max-width: 100%
+		height: auto
+	
+.info-item
+	margin-bottom: 20px
+	span,
+	p
+		display: block
+		color: #696969
+		font-size: 14px
+		margin: 0
+	p
+		color: #fff
+
+.footer-nav
+	a
+		display: block
+		margin-bottom: 20px
+		text-decoration: none
+		font-size: 16px
+		color: #fff
+		outline: none
+		&:hover
+			text-decoration: none
+			opacity: 0.75
+
+.container-wide
+	max-width: 1250px
+
+.footer-social
+
+	text-align: right
+
+.footer-phone
+	display: block
+	color: #fff
+	font-size: 20px
+	font-family: $font-bold
+	text-decoration: none
+	margin-bottom: 80px
+	&:hover
+		text-decoration: none
+		color: #fff
+		opacity: 0.75
+
+.footer-social_ico
+	display: inline-block
+	border-radius: 100px
+	color: #000
+	background-color: #fff
+	text-decoration: none
+	text-align: center
+	width: 25px
+	height: 25px
+	transition: all .15s
+	margin-left: 25px
+	&:hover
+		text-decoration: none
+		transform: scale(1.1)
+	i
+		display: inline-block
+		vertical-align: middle
+		color: #000
+		font-size: 16px
+		line-height: 1
+
+@import "media" // Always at the end
