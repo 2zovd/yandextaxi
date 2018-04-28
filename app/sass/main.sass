@@ -98,6 +98,7 @@ b, strong
 		display: inline-block
 		color: #303030
 		font-family: $font-bold
+    font-size: 16px
 		&:hover
 			text-decoration: none
 			opacity: 0.8
@@ -511,20 +512,42 @@ h3
 	max-width: 1250px
 
 .footer-social
-
+	display: flex
+	flex-direction: column
+	justify-content: space-between
 	text-align: right
+	margin-bottom: 25px
 
 .footer-phone
+    display: block
+    margin-bottom: 80px
+    span
+        display: block
+        color: #ccc
+        font-size: 12px
+        font-family: $font-regular
+    a
+        display: block
+        color: #fff
+        font-size: 20px
+        font-family: $font-bold
+        text-decoration: none
+        &:hover
+            text-decoration: none
+            color: #fff
+            opacity: 0.75
+	
+.footer-copyright
+	span
+		display: block
+		color: #565656
+		font-size: 14px
+			
+.header-info_text
 	display: block
-	color: #fff
-	font-size: 20px
-	font-family: $font-bold
-	text-decoration: none
-	margin-bottom: 80px
-	&:hover
-		text-decoration: none
-		color: #fff
-		opacity: 0.75
+	color: #ccc
+	font-size: 12px
+	font-family: $font-regular
 
 .footer-social_ico
 	display: inline-block
