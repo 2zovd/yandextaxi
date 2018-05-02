@@ -112,6 +112,7 @@ $(function() {
   //header btn
   $('.header-btn').on('click', function() {
     $('.header-right').toggleClass('active');
+    $(this).toggleClass('active');
   })
 
 });

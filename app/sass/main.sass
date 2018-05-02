@@ -264,11 +264,11 @@ h3
 	color: $blue
 
 .intro-form
-	display: flex
-	flex-wrap: wrap
-	margin-bottom: 50px
-	@include md
-		flex-direction: column
+  display: flex
+  margin-bottom: 50px
+  @include md
+    flex-wrap: wrap
+    flex-direction: column
 
 .intro-form_field,
 .intro-form_field-left,
@@ -504,13 +504,14 @@ h3
 			display: none
 
 .help-content_item
-	margin-right: 25px
-	img
-		margin-bottom: 15px
-	@include md
-		text-align: center
-		margin: 0
-		width: 30%
+  margin-right: 25px
+  img
+    margin-bottom: 15px
+  @include md
+    text-align: center
+    margin: 0
+    width: 30%
+    font-size: 14px
 
 .help-content_item-wrap
   display: flex
@@ -791,11 +792,21 @@ h3
 	max-width: 1250px
 
 .footer-social
-	display: flex
-	flex-direction: column
-	justify-content: space-between
-	text-align: right
-	margin-bottom: 25px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  text-align: right
+  margin-bottom: 25px
+  @include md
+    order: 2
+    
+.footer-nav_1
+  @include md
+    order: 1
+    
+.footer-nav_2
+  @include md
+    order: 3
 
 .footer-social_ico.ico-inst-mobile
 	@include md
@@ -969,3 +980,7 @@ h3
       background-size: 16px 2px
   @include lg
     display: flex
+  &.active
+    span
+      background-image: linear-gradient(to left, $orange, $orange)
+
