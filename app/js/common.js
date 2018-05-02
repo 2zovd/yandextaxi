@@ -36,11 +36,11 @@ $(function() {
     step  : 1,
     max   : 15,
     slide: function(event, ui) {
-      $(ui.handle).find('.tooltip').text(ui.value);
+      $(ui.handle).find('.slider-tooltip').text(ui.value);
       calculatorResult();
     },
     create: function(event, ui) {
-      var tooltip = $('<div class="tooltip">0</div>');
+      var tooltip = $('<div class="slider-tooltip">0</div>');
       $(event.target).find('.ui-slider-handle').append(tooltip);
     },
     change: function(event, ui) {
@@ -56,11 +56,11 @@ $(function() {
     step  : 1,
     max   : 100,
     slide: function(event, ui) {
-      $(ui.handle).find('.tooltip').text(ui.value);
+      $(ui.handle).find('.slider-tooltip').text(ui.value);
       calculatorResult();
     },
     create: function(event, ui) {
-      var tooltip = $('<div class="tooltip">0</div>');
+      var tooltip = $('<div class="slider-tooltip">0</div>');
       $(event.target).find('.ui-slider-handle').append(tooltip);
     },
     change: function(event, ui) {
@@ -114,5 +114,11 @@ $(function() {
     $('.header-right').toggleClass('active');
     $(this).toggleClass('active');
   })
+
+  //hide preloader
+
+  $(window).on('load', function() {
+    $('#preloader').delay(500).fadeOut('slow');
+  });
 
 });
