@@ -36,7 +36,12 @@ gulp.task('styles', function() {
 
 gulp.task('js', function() {
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/jquery/jquery-3.3.1.min.js',
+		'app/libs/jquery/jquery-ui-1.12.1/jquery-ui.min.js',
+		'app/libs/jquery/ui-touch-punch/jquery.ui.touch-punch.min.js',
+		'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js',
+		'app/libs/pagescroll2id/js/minified/jquery.malihu.PageScroll2id.min.js',
+		'app/libs/slick-carousel/slick/slick.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

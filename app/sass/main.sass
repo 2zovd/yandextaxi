@@ -1,6 +1,7 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import "media"
 
 ::placeholder
 	color: #191919
@@ -50,6 +51,7 @@ b, strong
 	justify-content: space-between
 	-ms-align-items: center
 	align-items: center
+  position: relative
 
 .logo
 	max-width: 125px
@@ -59,35 +61,80 @@ b, strong
 		height:  auto
 
 .main-nav
-	a
-		display: inline-block
-		color: #303030
-		margin-right: 45px
-		&:hover
-			opacity: 0.75
-			text-decoration: none
+  margin-right: 40px
+  a
+    display: inline-block
+    color: #303030
+    margin-right: 40px
+  &:hover
+    opacity: 0.75
+    text-decoration: none
+    text-decoration: none
+  @include lg
+    margin: 15px 0
+    display: flex
+    flex-direction: column
+    width: 100%
+    order: 2
+    a
+      display: block
+      width: 100%
+      margin: 0
+      text-align: center
+      padding: 10px
+      &:hover
+        background-color: rgba(0,0,0,.1)
 
 .sign-button
-	display: inline-block
-	border: 2px solid #f2c90b
-	border-radius: 100px
-	color: #191919
-	font-size: 16px
-	line-height: 17px
-	padding: 9px 18px 10px
-	text-decoration: none
-	text-align: center
-	&:hover
-		background-color: #f2c90b
-		color: #fff
-		text-decoration: none
+  display: inline-block
+  border: 2px solid #f2c90b
+  border-radius: 100px
+  color: #191919
+  font-size: 16px
+  line-height: 17px
+  padding: 9px 18px 10px
+  text-decoration: none
+  text-align: center
+  margin-right: 40px
+  &:hover
+    background-color: #f2c90b
+    color: #fff
+    text-decoration: none
+  @include lg
+    margin: 15px 0
 
 .main-footer
 	.sign-button
 		color: #fff
 		&:hover
 			color: #000
+  
+.header-info
+  @include lg
+      width: 100%
+      text-align: center
+      order: 1
+      font-size: 20px
+      margin: 15px 0
 
+.header-right
+  display: flex
+  align-items: center
+  justify-content: space-between
+  @include lg
+    display: none
+    background-color: #fff
+    position: absolute
+    width: 100%
+    left: 0
+    bottom: 0
+    transform: translateY(100%)
+    flex-direction: column
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,.15)
+    &.active
+      display: flex
+      border-top: 1px solid rgba(0,0,0,.05)
+    
 .header-info_phone
 	margin-bottom: 2px
 	padding-left: 10px
@@ -112,44 +159,92 @@ b, strong
 .intro
 	background-color: #f2c90b
 	min-height: 640px
+	position: relative
 
 .intro-content
-	padding-top: 100px
+  padding-top: 100px
+  @include md
+    padding-top: 40px
+		padding-bottom: 150px
+    display: block
+    text-align: center
 
 .intro-bg
 	background-image: url('../img/intro-bg-desktop.png')
 	background-repeat: no-repeat
 	background-position: 100% 30px
 	background-size: contain
+	@include lg
+		background-position: 100% 150px
+	@include md
+		min-height: 150px
+		background-size: cover
+		background-position: 50% 100%
+		background-repeat: repeat-x
+		background-image: url('../img/intro-bg-mobile.png')
+		position: absolute
+		bottom: 0
+		z-index: 0
+		left: 50%
+		transform: translateX(-50%)
 
 h1
 	color: #191919
 	font-family: $font-regular
 	font-size: 40px
 	margin-bottom: 15px
-	
+	@include md
+		font-size: 32px
+		text-align: center
+	@include sm
+		font-size: 26px
+
 h2
 	color: #191919
 	font-family: $font-regular
 	font-size: 22px
 	margin-bottom: 50px
+	@include md
+		font-size: 18px
+		text-align: center
+	@include sm
+		font-size: 14px
 
 h3
 	color: $text-color
 	font-size: 30px
 	font-family: $font-regular
+	@include md
+		font-size: 24px
+		text-align: center
+	@include sm
+		font-size: 19px
 
 .intro-advantages
 	margin-bottom: 50px
+	@include md
+		justify-content: center
+		text-align: center
 
 .intro-advantages_item
 	img
 		display: inline-block
 		margin-bottom: 15px
+		max-width: 100%
+		height: auto
 	p
 		font-family: $font-regular
 		color: #191919
 		font-size: 16px
+	@include md
+		img
+			max-height: 30px
+			width: auto
+		p
+			text-align: center
+			width: 100%
+			margin: 0 5px
+			font-size: 14px
 
 .intro-subhead
 	display: block
@@ -157,13 +252,23 @@ h3
 	font-family: $font-regular
 	max-width: 350px
 	margin-bottom: 25px
+	@include md
+		font-size: 18px
+		padding: 0 15px
+		margin: 0 auto 25px
+		text-align: center
+	@include sm
+		font-size: 14px
 	
 .text-blue
 	color: $blue
 
 .intro-form
 	display: flex
+	flex-wrap: wrap
 	margin-bottom: 50px
+	@include md
+		flex-direction: column
 
 .intro-form_field,
 .intro-form_field-left,
@@ -179,15 +284,19 @@ h3
 		appearance: none
 		padding: 8px 12px 9px
 		margin: 6px 0
+	@include md
+		width: 100%
+		margin-bottom: 10px
 
 .intro-form_field-left
 	border-radius: 5px 0 0 5px
 	input
 		border-right: 2px solid #d7d7d7
+		@include md
+			border: none
 
 .intro-form_field
 	border-radius: $radius
-	
 
 .intro-form_btn
 	background-color: #191919
@@ -204,15 +313,22 @@ h3
 		color: #f2c90b
 	&:active
 		opacity: 1
+	@include md
+		margin-bottom: 0
 
 .about
 	padding: 120px 0 60px
 	background-color: #f8f8f8
+	@include md
+		padding-top: 50px
+		padding-bottom: 15px
 
 .about-item
 	margin-bottom: 60px
 	img
 		display: inline-block
+		max-width: 100%
+		height: auto
 		margin-bottom: 20px
 	strong
 		display: block
@@ -224,6 +340,10 @@ h3
 		display: block
 		font-family: $font-regular
 		font-size: 16px
+	@include md
+		margin-bottom: 35px
+		img
+			max-width: 160px
 
 .section-heading
 	margin-bottom: 50px
@@ -233,39 +353,60 @@ h3
 
 .conditions
 	padding-top: 60px
+	@include md
+		padding-top: 50px
 
 .conditions-item
-	background-color: #fff
-	border-radius: 10px
-	padding: 20px 22px 27px 22px
-	box-shadow: 0 5px 40px -5px rgba(0,0,0,.15)
-	min-height: 100%
-	position: relative
-	&_wrap
-		margin-bottom: 50px
-	&_discount
-		position: absolute
-		right: 0
-		top: 55px
-		display: inline-block
-		color: rgba(0,0,0,.5)
-		font-family: $font-bold
-		background-color: $yellow
-		border-radius: 5px 0 0 5px
-		text-transform: uppercase
-		padding: 14px 10px 15px 18px
-		border: none
-		outline: none
-		appearance: none
-		margin: 0 auto
-	p,
-	ul
-		font-family: $font-regular
-		font-size: 14px
-		margin-bottom: 30px
-	ul
-		padding: 0
-		list-style: none
+  background-color: #fff
+  border-radius: 10px
+  padding: 20px 22px 27px 22px
+  box-shadow: 0 5px 40px -5px rgba(0,0,0,.15)
+  min-height: 100%
+  position: relative
+  min-height: 500px
+  &_wrap
+    margin-bottom: 50px
+  &_discount
+    position: absolute
+    right: 0
+    top: 55px
+    display: inline-block
+    color: rgba(0,0,0,.5)
+    font-family: $font-bold
+    background-color: $yellow
+    border-radius: 5px 0 0 5px
+    text-transform: uppercase
+    padding: 14px 10px 15px 18px
+    border: none
+    outline: none
+    appearance: none
+    margin: 0 auto
+  p,
+  ul
+    font-family: $font-regular
+    font-size: 14px
+    margin-bottom: 30px
+  ul
+    padding: 0
+    list-style: none
+  @include md
+    box-shadow: none
+    
+.conditions-container
+  max-width: 1170px
+  margin: 0 auto
+
+.conditions-item_wrap
+  outline: none
+  width: 100%
+  min-height: 500px
+    
+.conditions-item_inner
+  padding: 0 15px
+  @include lg
+    padding: 0 15px
+  @include md
+    padding: 0
 		
 .conditions-item_img
 	margin-bottom: 30px
@@ -281,6 +422,43 @@ h3
 	font-size: 18px
 	margin-bottom: 20px
 	
+.slick-arrow
+  position: absolute
+  right: 0
+  top: 2%
+  background-color: #f8f8f8
+  width: 53px
+  height: 41px
+  border: none
+  font-size: 0
+  line-height: 0
+  cursor: pointer
+  outline: none
+  z-index: 5
+  &:focus
+    outline: none
+  &:after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    background-image: url('../img/carousel-arrow.png')
+    background-repeat: no-repeat
+    background-size: contain
+    width: 25px
+    height: 18px
+  
+.slick-prev
+  transform: translateX(-100%)
+  &:after
+    transform: translate(-50%,-50%)
+  
+.slick-next
+  transform: rotate(180deg)
+  border-right: 1px solid #e1e1e1
+  
+
 .btn-custom
 	display: inline-block
 	color: rgba(0,0,0,.5)
@@ -301,31 +479,45 @@ h3
 		width: 100%
 	
 .help
-	position: relative
-	&:before
-		content: ''
-		position: absolute
-		background-color: #f8f8f8
-		left: 0
-		top: 0
-		width: 50%
-		height: 100%
-		z-index: -1
+  position: relative
+  @include md
+    background-color: #f8f8f8
+  &:before
+    content: ''
+    position: absolute
+    background-color: #f8f8f8
+    left: 0
+    top: 0
+    width: 50%
+    height: 100%
+    z-index: -1
 	
 .help-content
-	background-color: #f8f8f8
-	padding-top: 70px
-	min-height: 500px
+  background-color: #f8f8f8
+  padding-top: 70px
+  min-height: 500px
+  padding-bottom: 50px
+  @include md
+    padding-top: 50px
+    min-height: auto
+		.btn-custom
+			display: none
 
 .help-content_item
 	margin-right: 25px
 	img
 		margin-bottom: 15px
+	@include md
+		text-align: center
+		margin: 0
+		width: 30%
 
 .help-content_item-wrap
-	display: flex
-	justify-content: space-between
-	margin-bottom: 60px
+  display: flex
+  justify-content: space-between
+  margin-bottom: 60px
+  @include lg
+    flex-wrap: wrap
 
 .help-content
 	h3
@@ -336,9 +528,32 @@ h3
 	background-repeat: no-repeat
 	background-position: 100% 50%
 	background-size: contain
+	@include md
+		display: none
+	
+.help-bg_mobile
+	width: 100%
+	display: none
+	justify-content: center
+	-ms-align-items: center
+	align-items: center
+	min-height: 215px
+	background-repeat: no-repeat
+	background-image: url('../img/help-bg-mobile.png')
+	background-position: 50% 50%
+	background-color: #d7e1e6
+	background-size: 220px auto
+	@include md
+		display: flex
+	
+.calculator-left_item
+	@include md
+		text-align: center
 
 .calculator
 	padding-top: 60px
+	@include md
+		padding-top: 50px
 
 .calculator-left
 	h3
@@ -350,10 +565,21 @@ h3
 	&_item
 		img
 			margin-bottom: 10px
+	@include md
+		h3
+			margin-bottom: 30px
+		p
+			text-align: center
+			margin-bottom: 35px
 
 .calculator-right
+	margin-bottom: 65px
 	h3
 		margin-bottom: 40px
+	@include md
+		margin-bottom: 35px
+		h3
+			margin-bottom: 25px
 
 .calculator-right_subheading
 	margin-bottom: 25px
@@ -370,21 +596,42 @@ h3
 		color: $text-color
 		opacity: 0.7
 		margin-bottom: 40px
+	@include md
+		margin-bottom: 35px
+		p
+			font-size: 14px
+			margin-bottom: 10px
+		span
+			font-size: 18px
 
 .driver
 	background-color: #2f71e5
 	
 .driver-inner
-	padding: 85px 0 80px
+	padding-top: 85px
+	padding-bottom: 80px
+	position: relative
 	h3
 		margin-bottom: 100px
 		color: #fff
+	@include md
+		padding-top: 50px
+		padding-bottom: 120px
+		text-align: center
+		background-image: url('../img/driver-bg-mobile.png')
+		background-position: 50% 100%
+		background-size: 100% auto
+		background-repeat: no-repeat
+		h3
+			margin-bottom: 40px
 
 .driver-bg
 	background-image: url('../img/driver-bg.png')
 	background-repeat: no-repeat
 	background-position: 50% 30px
 	background-size: contain
+	@include md
+		background: none
 
 .driver-item
 	margin-bottom: 70px
@@ -402,6 +649,9 @@ h3
 		line-height: 22px
 	&_img
 		min-height: 65px
+	@include md
+		text-align: center
+		margin-bottom: 35px
 
 .driver-descr
 	p
@@ -414,7 +664,13 @@ h3
 .testimonials
 	padding: 110px 0 25px
 	h3
-		margin-bottom: 
+		margin-bottom: 0
+	.section-heading
+		margin-bottom: 80px
+	@include md
+		padding-top: 50px
+		.section-heading
+			margin-bottom: 35px
 	
 .telegram-link
 	display: block
@@ -464,6 +720,11 @@ h3
 		font-size: 11px
 		color: $text-color
 		opacity: 0.7
+	@include md
+		margin-bottom: 40px
+		img
+			max-width: 120px
+			margin: 0 auto
 
 .main-footer
 	background-color: #000
@@ -471,42 +732,60 @@ h3
 .footer-inner
 	padding: 35px 0 20px
 	min-height: 350px
-
+	@include md
+		
 .footer-info
 	display: flex
 	flex-direction: column
 	justify-content: space-between
+	@include md
+		order: 4
+		padding-top: 25px
+		flex-direction: column
+    align-items: center
+    justify-content: center
+		border-top: 1px solid #252525
 
 .footer-logo
-	display: block
-	max-width: 125px
-	img
-		display: inline-block
-		max-width: 100%
-		height: auto
+  display: block
+  max-width: 125px
+  img
+    display: inline-block
+    max-width: 100%
+    height: auto
+  @include md
+    flex-shrink: 0
+    margin-bottom: 25px
 	
 .info-item
-	margin-bottom: 20px
-	span,
-	p
-		display: block
-		color: #696969
-		font-size: 14px
-		margin: 0
-	p
-		color: #fff
+  margin-bottom: 20px
+  @include md
+    width: 48%
+  span,
+  p
+    display: block
+    color: #696969
+    font-size: 14px
+    margin: 0
+  p
+    color: #fff
+  
+.info-wrap
+  @include md
+    display: flex
+    justify-content: space-between
 
 .footer-nav
-	a
-		display: block
-		margin-bottom: 20px
-		text-decoration: none
-		font-size: 16px
-		color: #fff
-		outline: none
-		&:hover
-			text-decoration: none
-			opacity: 0.75
+  a
+    display: block
+    margin-bottom: 20px
+    text-decoration: none
+    font-size: 16px
+    color: #fff
+    outline: none
+    &:hover
+      text-decoration: none
+      opacity: 0.75
 
 .container-wide
 	max-width: 1250px
@@ -518,24 +797,38 @@ h3
 	text-align: right
 	margin-bottom: 25px
 
+.footer-social_ico.ico-inst-mobile
+	@include md
+		background-color: #ff1111
+	
+.hide-md
+	@include md
+		display: none
+
+
 .footer-phone
+  display: block
+  margin-bottom: 80px
+  span
     display: block
-    margin-bottom: 80px
-    span
-        display: block
-        color: #ccc
-        font-size: 12px
-        font-family: $font-regular
+    color: #ccc
+    font-size: 12px
+    font-family: $font-regular
+  a
+    display: block
+    color: #fff
+    font-size: 20px
+    font-family: $font-bold
+    text-decoration: none
+    &:hover
+      text-decoration: none
+      color: #fff
+      opacity: 0.75
+  @include md
+    margin-bottom: 20px
     a
-        display: block
-        color: #fff
-        font-size: 20px
-        font-family: $font-bold
-        text-decoration: none
-        &:hover
-            text-decoration: none
-            color: #fff
-            opacity: 0.75
+      font-size: 15px
+      margin-bottom: 10px
 	
 .footer-copyright
 	span
@@ -556,18 +849,123 @@ h3
 	background-color: #fff
 	text-decoration: none
 	text-align: center
-	width: 25px
-	height: 25px
+	width: 30px
+	height: 30px
 	transition: all .15s
 	margin-left: 25px
+	position: relative
 	&:hover
 		text-decoration: none
-		transform: scale(1.1)
+		opacity: 0.8
 	i
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
 		display: inline-block
 		vertical-align: middle
 		color: #000
 		font-size: 16px
 		line-height: 1
+	@include md
+		margin-left: 10px
+	
+// calculator slider customization	
+.ui-button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, html .ui-button.ui-state-disabled:active, html .ui-button.ui-state-disabled:hover
+    display: inline-block
+    background-color: #ffca00
+    border: none
+    border-radius: 100%
+    width: 30px
+    height: 30px
+    position: relative
+    cursor: pointer
+    outline: none
+    box-shadow: 0 3px 15px rgba(0,0,0,.2)
+    top: 50%
+    transform: translateY(-50%)
+    color: #000
 
-@import "media" // Always at the end
+	
+.ui-slider-horizontal .ui-slider-handle
+    &:after
+        content: ''
+        position: absolute
+        background-color: #fff
+        width: 12px
+        height: 12px
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        border-radius: 100%
+	
+.ui-slider .tooltip
+    position: absolute
+    top: -17px
+    left: 50%
+    transform: translate(-50%,-100%)
+    width: 26px
+    height: 30px
+    background-color: #ffca00
+    border-radius: 3px 3px 0 0
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    color: $text-color
+    font-weight: $font-regular
+    font-size: 18px
+    &:after
+        content: ''
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translate(-50%,100%)
+        border: 13px solid transparent
+        border-top-color: #ffca00
+	
+.calc-slider_wrap
+    padding-top: 60px
+    padding-bottom: 45px
+    
+.ui-widget.ui-widget-content
+    border: none
+    background-color: #ffca00
+    
+.ui-widget-header
+    background-color: #ffca00
+    
+.ui-corner-all, .ui-corner-bottom, .ui-corner-br, .ui-corner-right
+    border-radius: 100px
+    
+.slider-row
+  
+//mobile header nav
+.header-btn
+  width: 25px
+  height: 16px
+  border: none
+  background: none
+  cursor: pointer
+  padding: 0
+  margin: 0
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  display: none
+  outline: none
+  &:focus
+    outline: none
+  span
+    display: block
+    margin: 0
+    padding: 0
+    width: 25px
+    height: 2px
+    background-image: linear-gradient(to left, #1f1f1f, #1f1f1f)
+    background-repeat: no-repeat
+    background-size: 100% 2px
+    background-position: 100% 0
+    &:nth-child(2)
+      background-size: 16px 2px
+  @include lg
+    display: flex

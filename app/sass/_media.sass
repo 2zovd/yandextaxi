@@ -1,31 +1,49 @@
 @import "vars"
 
+// Extra small devices
+$screen-xs-max: 350
 
-/*==========  Desktop First  ==========*/
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576
 
-// ≥1200px
-+media-breakpoint-down(lg)
+// Small tablets (portrait view)
+$screen-md-max: 768
 
-// ≥992px
-+media-breakpoint-down(md)
+// Tablets and small desktops
+$screen-lg-max: 992
 
-// ≥768px
-+media-breakpoint-down(sm)
-
-// ≥576px
-+media-breakpoint-down(xs)
+// Large tablets and desktops
+$screen-xl-max: 1200
 
 
-/*==========  Mobile First  ==========*/
+// Custom devices
+@mixin rwd($screen)
+    @media (max-width: $screen+'px')
+        @content
 
-// ≤576px
-+media-breakpoint-up(sm)
+// Extra large devices
+@mixin xl
+    @media only screen and (max-width: $screen-xl-max +'px')
+        @content
 
-// ≤768px
-+media-breakpoint-up(md)
+// Large devices
+@mixin lg
+    @media only screen and (max-width: $screen-lg-max +'px')
+        @content
 
-// ≤992px
-+media-breakpoint-up(lg)
+// Medium devices
+@mixin md
+    @media only screen and (max-width: $screen-md-max +'px')
+        @content	
 
-// ≤1200px
-+media-breakpoint-up(xl)
+// Small devices
+@mixin sm
+    @media only screen and (max-width: $screen-sm-max +'px')
+        @content
+
+// Extra-small devices
+@mixin xs
+    @media only screen and (max-width: $screen-xs-max +'px')
+        @content
+
+
